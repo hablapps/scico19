@@ -1,0 +1,14 @@
+<xml>
+    <couple>
+        <her><name>Alex</name><age>60</age></her>
+        <him><name>Bert</name><age>55</age></him>
+    </couple>
+    <couple>
+        <her><name>Cora</name><age>33</age></her>
+        <him><name>Drew</name><age>31</age></him>
+    </couple>
+    <couple>
+        <her><name>Edna</name><age>21</age></her>
+        <him><name>Fred</name><age>60</age></him>
+    </couple>
+</xml>

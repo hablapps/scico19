@@ -1,0 +1,20 @@
+<xml>
+    <department>
+        <dpt>Product</dpt>
+        <employee><emp>Alex</emp><task><tsk>build</tsk></task></employee>
+        <employee><emp>Bert</emp><task><tsk>build</tsk></task></employee>
+    </department>
+    <department>
+        <dpt>Quality</dpt>
+    </department>
+    <department>
+        <dpt>Research</dpt>
+        <employee><emp>Cora</emp><task><tsk>abstract</tsk></task><task><tsk>build</tsk></task><task><tsk>design</tsk></task></employee>
+        <employee><emp>Drew</emp><task><tsk>abstract</tsk></task><task><tsk>design</tsk></task></employee>
+        <employee><emp>Edna</emp><task><tsk>abstract</tsk></task><task><tsk>call</tsk></task><task><tsk>design</tsk></task></employee>
+    </department>
+    <department>
+        <dpt>Sales</dpt>
+        <employee><emp>Fred</emp><task><tsk>call</tsk></task></employee>
+    </department>
+</xml>

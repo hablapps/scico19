@@ -1,0 +1,6 @@
+*.class
+*.log
+target
+project/target
+.idea
+sample.db
