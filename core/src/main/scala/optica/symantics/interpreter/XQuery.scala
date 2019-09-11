@@ -11,7 +11,8 @@ trait XQueryGetterSym extends GetterSym[λ[x => XQuery]] {
 
   def andThen_gt[S, A, B](u: XQuery, d: XQuery) = Seq(u, d)
 
-  def fork_gt[S, A, B](l: XQuery, r: XQuery) = Tuple(l, r)
+  def fork_gt[S, A, B](l: XQuery, r: XQuery) = 
+    Element("tuple", Element("fst", l), Element("snd", r))
 
   def like[S, A](a: A)(implicit B: Base[A]) = B match {
     case IntWitness => PInt(a)

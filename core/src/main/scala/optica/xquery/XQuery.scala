@@ -14,5 +14,5 @@ case class Oper(op: String, p: XQuery, q: XQuery) extends XQuery
 case class PInt(i: Int) extends XQuery
 case class PBool(b: Boolean) extends XQuery
 case class PString(s: String) extends XQuery
-case class Tuple(fst: XQuery, snd: XQuery) extends XQuery
+case class Element(tag: String, contents: XQuery*) extends XQuery
 

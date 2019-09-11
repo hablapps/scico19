@@ -12,8 +12,11 @@ class ToString {
     case Name(s) => s
     case Filter(p) => s"[$p]"
     case Self => "."
-    case Tuple(fst, snd) => 
-      s"""<tuple><fst>{$fst}</fst><snd>{$snd}</snd></tuple>"""
+    case Element(tag, contents @ _*) => 
+      s"""<$tag>${contents.map {
+        case e: Element => xqueryToString(e)
+        case x => s"{${xqueryToString(x)}}"
+      }.mkString}</$tag>"""
     case Func(op, p) => s"$op($p)"
     case Oper(op, p, q) => s"$p $op $q"
     case PInt(i) => s"$i"
