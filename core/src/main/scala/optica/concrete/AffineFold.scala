@@ -1,7 +1,7 @@
 package optica
 package concrete
 
-import scalaz._, Scalaz._, Kleisli._
+import scalaz._, Scalaz._
 
 case class AffineFold[S, A](preview: S => Option[A])
 
@@ -9,12 +9,12 @@ object AffineFold {
 
   implicit object AffineFoldCategory extends Category[AffineFold] {
 
-    def id[A]: AffineFold[A, A] = AffineFold(ask[Option, A])
+    def id[A]: AffineFold[A, A] = AffineFold(a => Some(a))
 
     def compose[A, B, C](
         f: AffineFold[B, C],
         g: AffineFold[A, B]): AffineFold[A, C] =
-      AffineFold(kleisli(g.preview) >>> kleisli(f.preview))
+      AffineFold(a => g.preview(a) >>= f.preview)
   }
 
   def filtered[S](p: Getter[S, Boolean]): AffineFold[S, S] =

@@ -1,7 +1,7 @@
 package optica
 package concrete
 
-import scalaz._, Scalaz._, Kleisli._
+import scalaz._, Scalaz._
 import Getter.syntax._
 
 case class Fold[S, A](getAll: S => List[A])
@@ -10,10 +10,10 @@ object Fold {
 
   implicit object FoldCat extends Category[Fold] {
 
-    def id[A]: Fold[A, A] = Fold(ask[List, A])
+    def id[A]: Fold[A, A] = Fold(a => List(a))
 
     def compose[A, B, C](f: Fold[B, C], g: Fold[A, B]): Fold[A, C] =
-      Fold(kleisli(g.getAll) >>> kleisli(f.getAll))
+      Fold(a => g.getAll(a) >>= f.getAll)
   }
 
   def nonEmpty[S, A](fl: Fold[S, A]): Getter[S, Boolean] =
