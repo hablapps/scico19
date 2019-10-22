@@ -1,6 +1,6 @@
-# optica
+# S-Optica
 
-This repository contains *Optica*, the library associated to the article
+This repository contains *S-Optica*, the library associated to the article
 *Viewing Language-Integrated Query From a Different Optic* (J. López González
 and Juan M.  Serrano), which was recently submitted to *Science of Computer
 Programming*.
